@@ -1,0 +1,31 @@
+name: Build 3dsx
+
+on: [push, pull_request]
+
+jobs:
+  Compile:
+    runs-on: ubuntu-latest
+
+    container:
+      image: docker://devkitpro/devkitarm
+      options: --cpus 2
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Configure
+        run: /opt/devkitpro/portlibs/3ds/bin/arm-none-eabi-cmake -S . -B build
+
+      - name: Build
+        run: make -C build
+
+      - id: commit
+        uses: pr-mpt/actions-commit-hash@v1
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: final-${{ steps.commit.outputs.short }}
+          path: |
+            build/*.elf
+            build/*.3dsx

@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <3ds.h>
 #include <citro2d.h>
+#include <mainMenu.h>
+#include <gstate.h>
 
 int main()
 {
@@ -15,12 +17,11 @@ int main()
   C2D_Prepare();
   C3D_RenderTarget* top = C2D_CreateScreenTarget(GFX_TOP, GFX_LEFT);
   C3D_RenderTarget* btm = C2D_CreateScreenTarget(GFX_BOTTOM, GFX_LEFT);
-
-  while aptMainLoop() {
+  while (aptMainLoop()) {
     // do stuff
   }
-  C2D_Exit();
-  C3D_Exit();
+  C2D_Fini();
+  C3D_Fini();
   romfsExit();
   gfxExit();
 }

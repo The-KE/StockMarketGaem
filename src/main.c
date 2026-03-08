@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <3ds.h>
 #include <citro2d.h>
-#include <mainMenu.h>
+#include <saveSelect.h>
+#include <titleScreen.h>
 #include <gstate.h>
 
 int main()

@@ -15,4 +15,12 @@ int main()
   C2D_Prepare();
   C3D_RenderTarget* top = C2D_CreateScreenTarget(GFX_TOP, GFX_LEFT);
   C3D_RenderTarget* btm = C2D_CreateScreenTarget(GFX_BOTTOM, GFX_LEFT);
+
+  while aptMainLoop() {
+    // do stuff
+  }
+  C2D_Exit();
+  C3D_Exit();
+  romfsExit();
+  gfxExit();
 }

@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <3ds.h>
 #include <citro2d.h>
-#include <saveSelect.h>
-#include <titleScreen.h>
+//#include <saveSelect.h>
+//#include <titleScreen.h>
+#include <stockTrade.h>
 #include <gstate.h>
 
 int main()
